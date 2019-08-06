@@ -8,9 +8,10 @@ if (! function_exists('antispambot')) {
      *
      * @param  string $email
      * @param  string $text
+     * @param  array $attributes
      * @return string
      */
-    function antispambot(string $email, string $text = null): string
+    function antispambot(string $email, string $text = '', array $attributes = []): string
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
             return '';
@@ -20,6 +21,11 @@ if (! function_exists('antispambot')) {
             $text = Antispambot::antispambot($email);
         }
 
-        return sprintf('<a href="mailto:%s">%s</a>', Antispambot::antispambot($email), $text);
+        $attributeString = '';
+        foreach ($attributes as $key => $value) {
+            $attributeString .= ' ' . $key . '="' . htmlspecialchars($value, ENT_QUOTES, 'UTF-8', true) . '"';
+        }
+
+        return sprintf('<a href="mailto:%s"%s>%s</a>', Antispambot::antispambot($email), $attributeString, $text);
     }
 }
