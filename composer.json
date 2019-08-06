@@ -1,0 +1,38 @@
+{
+  "name": "webnuvola/antispambot",
+  "description": "Stand-alone antispambot function from WordPress",
+  "keywords": ["spam", "email", "antispam", "wordpress", "obfuscation"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fabio Cagliero",
+      "email": "caglierofabio@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.3"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.15",
+    "phpunit/phpunit": "^8.3"
+  },
+  "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
+    "psr-4": {
+      "Webnuvola\\Antispambot\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Webnuvola\\Antispambot\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit --testdox"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
