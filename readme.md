@@ -1,6 +1,11 @@
 # Antispambot
 This package allows you to use the `antispambot` function outside of WordPress.
 
+## Installation
+```bash
+composer require webnuvola/antispambot
+```
+
 ## Usage
 ```php
 echo antispambot('info@example.com');
