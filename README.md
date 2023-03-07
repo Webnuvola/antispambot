@@ -14,11 +14,22 @@ composer require webnuvola/antispambot
 
 ## Usage
 ```php
-echo antispambot('info@example.com');
+echo antispambot('demo@example.com');
+// Example output: <a href="mailto:dem&#111;&#64;exa&#109;p&#108;&#101;.&#99;o&#109;">de&#109;&#111;&#64;e&#120;ample&#46;&#99;om</a>
+// Example output decoded: <a href="mailto:demo@example.com">demo@example.com</a>
+
+echo antispambot('demo@example.com', 'Contact us');
+// Example output: <a href="mailto:&#105;&#110;fo&#64;ex&#97;&#109;&#112;&#108;e&#46;co&#109;">Contact us</a>
+
+echo antispambot('demo@example.com', 'Contact us', ['class' => 'text-white', 'target' => '_blank']);
+// Example output: <a href="mailto:&#105;&#110;&#102;o&#64;e&#120;&#97;&#109;ple.&#99;&#111;&#109;" class="text-white" target="_blank">Contact us</a>
+
+echo \Webnuvola\Antispambot\Antispambot::antispambot('demo@example.com');
+// Example output: &#100;&#101;&#109;&#111;&#64;e&#120;a&#109;pl&#101;&#46;co&#109;
 ```
 
 ## Documentation
-[WordPress Developer Resources](https://developer.wordpress.org/reference/functions/antispambot/)
+`antispambot` on [WordPress Developer Resources](https://developer.wordpress.org/reference/functions/antispambot/).
 
 ## Testing
 ```bash
