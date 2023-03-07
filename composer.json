@@ -1,38 +1,40 @@
 {
-  "name": "webnuvola/antispambot",
-  "description": "Stand-alone antispambot function from WordPress",
-  "keywords": ["spam", "email", "antispam", "wordpress", "obfuscation"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Fabio Cagliero",
-      "email": "caglierofabio@gmail.com"
-    }
-  ],
-  "require": {
-    "php": "^7.4|^8.0"
-  },
-  "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.18",
-    "phpunit/phpunit": "^9.5"
-  },
-  "autoload": {
-    "files": [
-      "src/helpers.php"
+    "name": "webnuvola/antispambot",
+    "description": "Stand-alone antispambot function from WordPress",
+    "keywords": ["antispam", "antispambot", "email", "obfuscation", "spam", "wordpress"],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Fabio Cagliero",
+            "email": "fabio@webnuvola.com"
+        }
     ],
-    "psr-4": {
-      "Webnuvola\\Antispambot\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Webnuvola\\Antispambot\\Tests\\": "tests/"
-    }
-  },
-  "scripts": {
-    "test": "phpunit --testdox"
-  },
-  "config": {
-    "sort-packages": true
-  }
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.14",
+        "phpunit/phpunit": "^9.6.4"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Webnuvola\\Antispambot\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webnuvola\\Antispambot\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --testdox"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
