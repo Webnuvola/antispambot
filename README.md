@@ -1,6 +1,6 @@
 # Antispambot
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/webnuvola/antispambot.svg?style=flat-square)](https://packagist.org/packages/webnuvola/antispambot)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/webnuvola/antispambot/run-tests.yml?branch=main)](https://github.com/Webnuvola/antispambot/actions?query=branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/webnuvola/antispambot/tests.yml?branch=main&style=flat-square)](https://github.com/Webnuvola/antispambot/actions?query=branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/webnuvola/antispambot.svg?style=flat-square)](https://packagist.org/packages/webnuvola/antispambot)
 
 This package allows you to use the `antispambot` function outside of WordPress.
@@ -27,6 +27,8 @@ echo antispambot('demo@example.com', 'Contact us', ['class' => 'text-white', 'ta
 echo \Webnuvola\Antispambot\Antispambot::antispambot('demo@example.com');
 // Example output: &#100;&#101;&#109;&#111;&#64;e&#120;a&#109;pl&#101;&#46;co&#109;
 ```
+
+Use `antispambot_html` function to return an instance of `Illuminate\Support\HtmlString` to use with Laravel framework.
 
 ## Documentation
 `antispambot` on [WordPress Developer Resources](https://developer.wordpress.org/reference/functions/antispambot/).
