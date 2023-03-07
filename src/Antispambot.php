@@ -2,19 +2,17 @@
 
 namespace Webnuvola\Antispambot;
 
-/**
- * Based on wordpress function antispambot.
- *
- * @see https://codex.wordpress.org/Function_Reference/antispambot
- */
 class Antispambot
 {
     /**
      * Converts email addresses characters to HTML entities to block spam bots.
+     * Based on WordPress function antispambot.
      *
      * @param  string $email_address
      * @param  bool $hex_encoding
      * @return string
+     *
+     * @see https://developer.wordpress.org/reference/functions/antispambot/
      */
     public static function antispambot(string $email_address, bool $hex_encoding = false): string
     {

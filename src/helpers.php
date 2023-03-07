@@ -23,7 +23,7 @@ if (! function_exists('antispambot')) {
 
         $attributeString = '';
         foreach ($attributes as $key => $value) {
-            $attributeString .= ' ' . $key . '="' . htmlspecialchars($value, ENT_QUOTES, 'UTF-8', true) . '"';
+            $attributeString .= sprintf(' %s="%s"', $key, htmlspecialchars($value, ENT_QUOTES, 'UTF-8'));
         }
 
         return sprintf('<a href="mailto:%s"%s>%s</a>', Antispambot::antispambot($email), $attributeString, $text);
