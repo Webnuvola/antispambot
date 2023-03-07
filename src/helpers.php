@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\HtmlString;
 use Webnuvola\Antispambot\Antispambot;
 
 if (! function_exists('antispambot')) {
     /**
-     * Hide email from Spam Bots using a shortcode.
+     * Hide email from Spam Bots.
      *
      * @param  string $email
      * @param  string $text
@@ -27,5 +28,20 @@ if (! function_exists('antispambot')) {
         }
 
         return sprintf('<a href="mailto:%s"%s>%s</a>', Antispambot::antispambot($email), $attributeString, $text);
+    }
+}
+
+if (! function_exists('antispambot_html')) {
+    /**
+     * Hide email from Spam Bots. Return instance of HtmlString.
+     *
+     * @param  string $email
+     * @param  string $text
+     * @param  array $attributes
+     * @return \Illuminate\Support\HtmlString
+     */
+    function antispambot_html(string $email, string $text = '', array $attributes = []): HtmlString
+    {
+        return new HtmlString(antispambot($email, $text, $attributes));
     }
 }

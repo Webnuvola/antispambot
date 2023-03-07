@@ -61,6 +61,12 @@ final class AntispambotTest extends TestCase
         $this->assertNotEquals(false, strpos($result, 'target="_blank"'));
     }
 
+    public function testAntispambotHtmlFunction(): void
+    {
+        antispambot_html('demo@example.com');
+        $this->assertTrue(true);
+    }
+
     protected function decodeEmail(string $encodedEmail): string
     {
         return html_entity_decode($encodedEmail, ENT_HTML5);
