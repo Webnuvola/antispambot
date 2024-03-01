@@ -6,11 +6,6 @@ class Antispambot
 {
     /**
      * Converts email addresses characters to HTML entities to block spam bots.
-     * Based on WordPress function antispambot.
-     *
-     * @param  string $email_address
-     * @param  bool $hex_encoding
-     * @return string
      *
      * @see https://developer.wordpress.org/reference/functions/antispambot/
      */
@@ -35,19 +30,9 @@ class Antispambot
     /**
      * Add leading zeros when necessary.
      *
-     * If you set the threshold to '4' and the number is '10', then you will get
-     * back '0010'. If you set the threshold to '4' and the number is '5000', then you
-     * will get back '5000'.
-     *
-     * Uses sprintf to append the amount of zeros based on the $threshold parameter
-     * and the size of the number. If the number is large enough, then no zeros will
-     * be appended.
-     *
-     * @param  int|string $number
-     * @param  int $threshold
-     * @return string
+     * @see https://developer.wordpress.org/reference/functions/zeroise/
      */
-    protected static function zeroise($number, int $threshold): string
+    protected static function zeroise(int|string $number, int $threshold): string
     {
         return sprintf('%0' . $threshold . 's', $number);
     }
