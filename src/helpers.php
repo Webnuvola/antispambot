@@ -5,12 +5,7 @@ use Webnuvola\Antispambot\Antispambot;
 
 if (! function_exists('antispambot')) {
     /**
-     * Hide email from Spam Bots.
-     *
-     * @param  string $email
-     * @param  string $text
-     * @param  array $attributes
-     * @return string
+     * Obscures email addresses in HTML to prevent spam bots from harvesting them.
      */
     function antispambot(string $email, string $text = '', array $attributes = []): string
     {
@@ -33,12 +28,8 @@ if (! function_exists('antispambot')) {
 
 if (! function_exists('antispambot_html')) {
     /**
-     * Hide email from Spam Bots. Return instance of HtmlString.
-     *
-     * @param  string $email
-     * @param  string $text
-     * @param  array $attributes
-     * @return \Illuminate\Support\HtmlString
+     * Obscures email addresses in HTML to prevent spam bots from harvesting them.
+     * Return the result as an instance of HtmlString.
      */
     function antispambot_html(string $email, string $text = '', array $attributes = []): HtmlString
     {
